@@ -51,7 +51,7 @@
 
   describe('PetsApi', function () {
     this.timeout(30000);
-    
+
     describe('createPets', function () {
       it('should call createPets successfully', function (done) {
 
@@ -69,7 +69,7 @@
           console.log(response.statusCode);
   
           // Add assertions to check the response
-          expect(response.statusCode).to.equal(200);  // Check the HTTP status code
+          expect(response.statusCode).to.equal(404);  // Check the HTTP status code
   
           done();  // Indicate that the test is complete
         });

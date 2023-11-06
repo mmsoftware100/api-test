@@ -33,7 +33,7 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'http://petstore.swagger.io/v1') {
+    constructor(basePath = 'http://petstore.swagger.io/v2') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
