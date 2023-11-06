@@ -485,9 +485,11 @@ class ApiClient {
         }
 
         request.end((error, response) => {
+            /*
             console.log("From ApiClient.js");
             console.log(error);
             console.log(response.statusCode);
+            */
             if (callback) {
                 var data = null;
                 if (!error) {
@@ -502,6 +504,7 @@ class ApiClient {
                 }
 
                 // if(error == null) error = "";
+                // update with destructring
                 callback({error, data, response});
             }
         });

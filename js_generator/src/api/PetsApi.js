@@ -47,6 +47,7 @@ export default class PetsApi {
    * Create a pet
    * @param {module:api/PetsApi~createPetsCallback} callback The callback function, accepting three arguments: error, data, response
    */
+  // accept postBody
   createPets(callback, postBody) {
     /*
     let postBody = {
@@ -82,8 +83,9 @@ export default class PetsApi {
     let contentTypes = ["application/json"];
     let accepts = ['application/json'];
     let returnType = null;
-    console.log("start api call");
-    console.log(callback);
+    // console.log("start api call");
+    // console.log(callback);
+    // update endpont with singular
     return this.apiClient.callApi(
       '/pet', 'POST',
       pathParams, queryParams, headerParams, formParams, postBody,

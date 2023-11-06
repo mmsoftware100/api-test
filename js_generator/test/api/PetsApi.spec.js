@@ -51,7 +51,6 @@
 
   describe('PetsApi', function () {
     this.timeout(30000);
-
     describe('createPets', function () {
       let postBody = {
         "id": 0,
@@ -59,7 +58,7 @@
           "id": 0,
           "name": "Myanmar"
         },
-        "name": "Inn Khway",
+        "name": "အင်းခွေး",
         "photoUrls": [
           "string"
         ],
@@ -79,6 +78,7 @@
         instance.createPets(({ error, data, response }) => {
           if (error) throw error;
   
+          /*
           console.log("call back fired");
           console.log("error");
           console.log(error);
@@ -86,6 +86,7 @@
           console.log(data);
           console.log("response");
           console.log(response.text);
+          */
   
           // Add assertions to check the response
           expect(response.statusCode).to.equal(200);  // Check the HTTP status code

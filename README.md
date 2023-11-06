@@ -1,5 +1,63 @@
 # How to test API
 
+
+## Setup Guide
+
+- [ ] Clone this repo
+- [ ] Run this commands
+
+```bash
+cd js_generator
+npm install
+npm test
+```
+
+
+
+### Example Test Code
+
+```js
+describe('PetsApi', function () {
+    this.timeout(30000);
+    describe('createPets', function () {
+      let postBody = {
+        "id": 0,
+        "category": {
+          "id": 0,
+          "name": "Myanmar"
+        },
+        "name": "အင်းခွေး",
+        "photoUrls": [
+          "string"
+        ],
+        "tags": [
+          {
+            "id": 0,
+            "name": "tag one"
+          }
+        ],
+        "status": "available"
+      };
+
+      it('should call createPets successfully with '+ postBody.name, function (done) {
+        instance.createPets(({ error, data, response }) => {
+          if (error) throw error;
+          // Add assertions to check the response
+          expect(response.statusCode).to.equal(200);  // Check the HTTP status code
+          expect(JSON.parse(response.text).name).to.equal(postBody.name);
+          done();  // Indicate that the test is complete
+        }, postBody);
+      });
+    });
+  });
+```
+
+
+```bash
+  PetsApi
+    createPets
+      ✓ should call createPets successfully with အင်းခွေး (2104ms)
+```
 ## ရေးထားတဲ့ API Client ကို ပြင်ရန်။
 
 { destructuring နဲ့ သွားမယ်။​ }
