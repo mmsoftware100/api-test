@@ -137,12 +137,16 @@
     });
     describe('listPets', function () {
       it('should call listPets successfully', function (done) {
-        //uncomment below and update the code to test listPets
-        //instance.listPets(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
+        let opts = {
+          "status": "available"
+        };
+
+        instance.listPets(opts,({ error, data, response }) => {
+          if (error) throw error;
+          // Add assertions to check the response
+          expect(response.statusCode).to.equal(200);  // Check the HTTP status code
+          done();  // Indicate that the test is complete
+        }, );
       });
     });
     describe('showPetById', function () {

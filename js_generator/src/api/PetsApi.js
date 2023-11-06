@@ -110,13 +110,22 @@ export default class PetsApi {
    */
   listPets(opts, callback) {
     opts = opts || {};
+    /*
+    console.log("PetsApi.listPets");
+    console.log(opts);
+    console.log(callback);
+    */
+    // return;
     let postBody = null;
 
-    let pathParams = {
-    };
+    let pathParams = {...opts};
+    /*
     let queryParams = {
       'limit': opts['limit']
     };
+    */
+    let queryParams = {  };
+
     let headerParams = {
     };
     let formParams = {
@@ -127,7 +136,7 @@ export default class PetsApi {
     let accepts = ['application/json'];
     let returnType = [Pet];
     return this.apiClient.callApi(
-      '/pets', 'GET',
+      '/pet/findByStatus', 'GET',
       pathParams, queryParams, headerParams, formParams, postBody,
       authNames, contentTypes, accepts, returnType, null, callback
     );
