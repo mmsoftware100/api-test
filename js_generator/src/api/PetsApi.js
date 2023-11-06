@@ -178,7 +178,7 @@ export default class PetsApi {
     let accepts = ['application/json'];
     let returnType = Pet;
     return this.apiClient.callApi(
-      '/pets/{petId}', 'GET',
+      '/pet/{petId}', 'GET',
       pathParams, queryParams, headerParams, formParams, postBody,
       authNames, contentTypes, accepts, returnType, null, callback
     );

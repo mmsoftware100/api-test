@@ -151,12 +151,21 @@
     });
     describe('showPetById', function () {
       it('should call showPetById successfully', function (done) {
+        let petId = "102";
+
+        instance.showPetById(petId,({ error, data, response }) => {
+          if (error) throw error;
+          // Add assertions to check the response
+          expect(response.statusCode).to.equal(200);  // Check the HTTP status code
+          done();  // Indicate that the test is complete
+        }, );
+
         //uncomment below and update the code to test showPetById
         //instance.showPetById(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
-        done();
+        // done();
       });
     });
   });
