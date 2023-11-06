@@ -1,12 +1,4 @@
-var SwaggerPetstore = require('swagger_petstore');
+console.log("Hello World");
 
 
-var api = new SwaggerPetstore.PetsApi()
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.createPets(callback);
+
