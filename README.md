@@ -13,6 +13,9 @@ npm test
 ```
 
 
+*** yaml file မှာ specification တွေ မှန်အောင် ထည့်ပေးရန် ***
+
+မဟုတ်ရင် Http Client က စပြီး ခေါ်သုံးတဲ့ API တစ်ခုချင်းစီ endpoint နဲ့ data တွေ လိုက်ပြင်နေရ။
 
 ### Example Test Code
 
