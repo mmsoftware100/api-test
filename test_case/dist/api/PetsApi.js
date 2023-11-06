@@ -51,7 +51,7 @@ export default class PetsApi {
     let headerParams = {};
     let formParams = {};
     let authNames = [];
-    let contentTypes = [];
+    let contentTypes = ["application/json"];
     let accepts = ['application/json'];
     let returnType = null;
     return this.apiClient.callApi('/pets', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);

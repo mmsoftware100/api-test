@@ -53,10 +53,29 @@
     this.timeout(30000);
 
     describe('createPets', function () {
-      it('should call createPets successfully', function (done) {
+      let postBody = {
+        "id": 0,
+        "category": {
+          "id": 0,
+          "name": "Myanmar"
+        },
+        "name": "Inn Khway",
+        "photoUrls": [
+          "string"
+        ],
+        "tags": [
+          {
+            "id": 0,
+            "name": "tag one"
+          }
+        ],
+        "status": "available"
+      };
+
+      it('should call createPets successfully with '+ postBody.name, function (done) {
 
         // Make an API call to create a pet
-
+        
         instance.createPets(({ error, data, response }) => {
           if (error) throw error;
   
@@ -66,13 +85,15 @@
           console.log("data");
           console.log(data);
           console.log("response");
-          console.log(response.statusCode);
+          console.log(response.text);
   
           // Add assertions to check the response
-          expect(response.statusCode).to.equal(404);  // Check the HTTP status code
+          expect(response.statusCode).to.equal(200);  // Check the HTTP status code
+
+          expect(JSON.parse(response.text).name).to.equal(postBody.name);
   
           done();  // Indicate that the test is complete
-        });
+        }, postBody);
 
         /*
         instance.createPets(({ error, data, response }) => {

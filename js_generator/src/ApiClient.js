@@ -33,7 +33,7 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'http://petstore.swagger.io/v2') {
+    constructor(basePath = 'https://petstore.swagger.io/v2') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
@@ -485,6 +485,9 @@ class ApiClient {
         }
 
         request.end((error, response) => {
+            console.log("From ApiClient.js");
+            console.log(error);
+            console.log(response.statusCode);
             if (callback) {
                 var data = null;
                 if (!error) {
@@ -498,7 +501,8 @@ class ApiClient {
                     }
                 }
 
-                callback(error, data, response);
+                // if(error == null) error = "";
+                callback({error, data, response});
             }
         });
 
